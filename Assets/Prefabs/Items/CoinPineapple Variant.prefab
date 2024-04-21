@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8802035559133403025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096103520652351105, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153850707142600020, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 837517196756356485, guid: 131e485692e27e84c86170dad18cda85, type: 3}
+    - target: {fileID: 5593360019248712494, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_Name
+      value: CoinPineapple Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904422459692441344, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bc378ca62f3b44eeb88eb57cd6fb5c7f, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc9b910da91f24b659565d2a7346ad87, type: 3}

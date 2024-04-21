@@ -9,13 +9,21 @@ namespace Wallet
     public class Wallet : MonoBehaviour
     {
         public event UnityAction CoinsChanged;
-        private int _coins = 0;
+        [SerializeField] private int _coins;
+        [SerializeField] private int _lifes = 3;
 
         public int Coins => _coins;
+        public int Lifes => _lifes;
 
         private void OnEnable()
         {
             Collectable.ItemCollected += Collect;
+        }
+
+        public void Damage(int damage)
+        {
+            _lifes -= damage;
+            CoinsChanged?.Invoke();
         }
 
         private void Start()
@@ -29,11 +37,13 @@ namespace Wallet
             {
                 case Collectable.Type.Coin:
                     _coins += 1;
-                    CoinsChanged?.Invoke();
                     break;
                 case Collectable.Type.Life:
+                    _lifes -= 1;
                     break;
             }
+            
+            CoinsChanged?.Invoke();
         }
         
         private void OnDisable()

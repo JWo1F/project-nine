@@ -1,32 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Wallet
 {
-    public class CoinText : MonoBehaviour
+    public class CoinText : WalletListener
     {
-        [SerializeField] private Wallet wallet;
+        [SerializeField] protected Collectable.Type type = Collectable.Type.Coin;
 
         private TextMeshProUGUI _text;
-        
-        private void OnEnable()
+
+        private void Start()
         {
             _text = GetComponent<TextMeshProUGUI>();
-            wallet.CoinsChanged += DisplayAmount;
         }
 
-        private void DisplayAmount()
+        protected override void DisplayAmount()
         {
-            _text.text = wallet.Coins.ToString();
-        }
-        
-        private void OnDestroy()
-        {
-            wallet.CoinsChanged -= DisplayAmount;
+            _text.text = type == Collectable.Type.Coin ? wallet.Coins.ToString() : wallet.Lifes.ToString();
         }
     }
 }
