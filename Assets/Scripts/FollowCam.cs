@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowCam : MonoBehaviour
@@ -8,8 +6,10 @@ public class FollowCam : MonoBehaviour
 
     private void Update()
     {
-        var transform1 = transform;
+        var tr = transform;
         var position = target.position;
-        transform1.position = new Vector3(position.x, position.y, transform1.position.z);
+        var pos = tr.position;
+
+        tr.position = new Vector3(position.x, pos.y, pos.z);
     }
 }

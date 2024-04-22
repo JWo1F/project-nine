@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4691225403472443313}
   - component: {fileID: 6218360828645820489}
   - component: {fileID: 2416557093698617504}
-  - component: {fileID: 4274112788451771596}
   - component: {fileID: 9102861220932406567}
   m_Layer: 0
   m_Name: Slime
@@ -204,21 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55bf42a41f864bbfbffce5236f112fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &4274112788451771596
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6064468924755813242}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 4d1089ed8270749698dc6a10d66c11e5, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &9102861220932406567
 Animator:
   serializedVersion: 5

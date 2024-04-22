@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  safeTop: 0
+  safeTop: 1
   bounceForce: 7
 --- !u!114 &1337654433808926537
 MonoBehaviour:

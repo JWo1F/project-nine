@@ -22,17 +22,21 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D _rb;
+    private SpriteRenderer _spr;
     private bool _isGrounded;
     private int _remainingJumps;
-    private Vector2 prevVector;
     private Animator _animator;
+    private bool _prevLeft;
+    
     private static readonly int State = Animator.StringToHash("State");
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spr = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _remainingJumps = maxJumps;
+        _prevLeft = _spr.flipX;
     }
 
     private void Update()
@@ -78,8 +82,11 @@ public class PlayerMovement : MonoBehaviour
         var velocity = _rb.velocity;
         var nextState = CalculateState(velocity.x != 0, velocity.y);
         if (_animator.GetInteger(State) != nextState) _animator.SetInteger(State, nextState);
-        
-        prevVector = velocity.x > 0 ? Vector2.right : Vector2.left;
+
+        if (velocity.x == 0) return;
+        var nextLeft = velocity.x < 0;
+        if (nextLeft != _prevLeft) _spr.flipX = !_spr.flipX;
+        _prevLeft = nextLeft;
     }
     
     private static int CalculateState(bool move, float y)
