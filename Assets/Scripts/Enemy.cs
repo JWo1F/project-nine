@@ -16,7 +16,7 @@ public class Enemy: MonoBehaviour
         if (safeTop && other.transform.position.y > transform.position.y) return;
         
         var otherRigidBody = other.gameObject.GetComponent<Rigidbody2D>();
-        var vector = (other.gameObject.transform.position - transform.position).normalized * bounceForce;
+        var vector = (other.transform.position - transform.position).normalized * bounceForce;
 
         otherWallet.Lives -= damage;
         otherRigidBody.AddForce(vector, ForceMode2D.Impulse);

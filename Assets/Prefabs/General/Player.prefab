@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1794643435362129056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5694952730292483930}
+  m_Layer: 0
+  m_Name: GroundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5694952730292483930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794643435362129056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7886893437296700270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8682177150947758482
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,10 +42,10 @@ GameObject:
   - component: {fileID: 7886893437296700270}
   - component: {fileID: 9066433415024747150}
   - component: {fileID: 6428393186820922200}
-  - component: {fileID: 3978228880552135212}
   - component: {fileID: 3796585417360779719}
   - component: {fileID: 8253325451805758546}
   - component: {fileID: 1145585478658430534}
+  - component: {fileID: 7886225720068142318}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -34,7 +65,8 @@ Transform:
   m_LocalPosition: {x: 12.15, y: -3.0369682, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5694952730292483930}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &9066433415024747150
@@ -99,20 +131,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.028918505, y: -0.06818271}
   m_Size: {x: 0.67135096, y: 0.87134933}
   m_Direction: 0
---- !u!114 &3978228880552135212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8682177150947758482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a2084d119cf4f9f8272fc043ca5312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flipped: 1
-  jumpForce: 6
 --- !u!212 &3796585417360779719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -200,3 +218,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 0
   lives: 3
+--- !u!114 &7886225720068142318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682177150947758482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7de958067304650aa221d81d453390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  acceleration: 15
+  deceleration: 10
+  maxSpeed: 10
+  jumpForce: 5
+  airJumpForce: 7
+  maxJumps: 1
+  groundCheck: {fileID: 5694952730292483930}
+  groundCheckRadius: 0.05
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
