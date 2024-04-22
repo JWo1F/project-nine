@@ -16,7 +16,7 @@ namespace Wallet
 
         protected override void DisplayAmount()
         {
-            _text.text = type == Collectable.Type.Coin ? wallet.Coins.ToString() : wallet.Lifes.ToString();
+            _text.text = type == Collectable.Type.Coin ? wallet.Coins.ToString() : wallet.Lives.ToString();
         }
     }
 }

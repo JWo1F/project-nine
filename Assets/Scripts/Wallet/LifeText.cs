@@ -9,7 +9,7 @@ namespace Wallet
 
         protected override void DisplayAmount()
         {
-            var current = wallet.Lifes;
+            var current = wallet.Lives;
             for (var i = 0; i < lifes.Length; i++)
                 lifes[i].SetActive(current >= i + 1);
         }

@@ -17,9 +17,8 @@ public class Enemy: MonoBehaviour
         
         var otherRigidBody = other.gameObject.GetComponent<Rigidbody2D>();
         var vector = (other.gameObject.transform.position - transform.position).normalized * bounceForce;
-        
-        otherWallet.Damage(damage);
-        Debug.Log("Damage!");
+
+        otherWallet.Lives -= damage;
         otherRigidBody.AddForce(vector, ForceMode2D.Impulse);
     }
 }

@@ -3,27 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Wallet
 {
     public class Wallet : MonoBehaviour
     {
         public event UnityAction CoinsChanged;
-        [SerializeField] private int _coins;
-        [SerializeField] private int _lifes = 3;
+        [SerializeField] private int coins;
+        [SerializeField] private int lives = 3;
 
-        public int Coins => _coins;
-        public int Lifes => _lifes;
-
-        private void OnEnable()
+        public int Coins
         {
-            Collectable.ItemCollected += Collect;
+            get => coins;
+            set
+            {
+                coins = value;
+                CoinsChanged?.Invoke();
+            }
         }
 
-        public void Damage(int damage)
+        public int Lives
         {
-            _lifes -= damage;
-            CoinsChanged?.Invoke();
+            get => lives;
+            set
+            {
+                lives = value;
+                CoinsChanged?.Invoke();
+            }
         }
 
         private void Start()
@@ -31,24 +38,19 @@ namespace Wallet
             CoinsChanged?.Invoke();
         }
 
-        private void Collect(Collectable.Type type)
+        public void Collect(Collectable.Type type, int count)
         {
             switch (type)
             {
                 case Collectable.Type.Coin:
-                    _coins += 1;
+                    coins += count;
                     break;
                 case Collectable.Type.Life:
-                    _lifes -= 1;
+                    lives += count;
                     break;
             }
             
             CoinsChanged?.Invoke();
-        }
-        
-        private void OnDisable()
-        {
-            Collectable.ItemCollected -= Collect;
         }
     }
 }
