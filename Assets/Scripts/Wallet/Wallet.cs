@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace Wallet
@@ -29,7 +30,8 @@ namespace Wallet
             set
             {
                 lives = value;
-                CoinsChanged?.Invoke();
+                if (lives <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                else CoinsChanged?.Invoke();
             }
         }
 
