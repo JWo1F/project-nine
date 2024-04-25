@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -8,6 +7,6 @@ public class SceneChanger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name != "Player") return;
-        SceneManager.LoadScene(nextScene);
+        GameState.ChangeScene(nextScene);
     }
 }

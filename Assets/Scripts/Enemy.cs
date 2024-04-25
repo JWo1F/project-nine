@@ -9,14 +9,13 @@ public class Enemy: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        var otherWallet = other.gameObject.GetComponent<Wallet.Wallet>();
-        if (otherWallet == null) return;
+        if (other.gameObject.name != "Player") return;
         if (safeTop && other.transform.position.y > transform.position.y) return;
         
         var otherRigidBody = other.gameObject.GetComponent<Rigidbody2D>();
         var vector = (other.transform.position - transform.position).normalized * bounceForce;
 
-        otherWallet.Lives -= damage;
+        GameState.LivesCount -= damage;
         otherRigidBody.AddForce(vector, ForceMode2D.Impulse);
     }
 }

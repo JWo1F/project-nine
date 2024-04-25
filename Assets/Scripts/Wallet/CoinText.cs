@@ -17,7 +17,7 @@ namespace Wallet
 
         protected override void DisplayAmount()
         {
-            var count = type == Collectable.Type.Coin ? wallet.Coins : wallet.Lives;
+            var count = type == Collectable.Type.Coin ? GameState.CoinsCount : GameState.LivesCount;
             _text.text = prefix + count;
         }
     }

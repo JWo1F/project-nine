@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuActions : MonoBehaviour
 {
@@ -12,6 +11,13 @@ public class MainMenuActions : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(mainScene);
+        GameState.Reset();
+        GameState.ChangeScene(mainScene);
+    }
+
+    public void RestartGame()
+    {
+        GameState.LivesCount = GameState.DefaultLives;
+        GameState.ChangeScene(GameState.CurrentLevelName);
     }
 }

@@ -1,7 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Wallet
 {
@@ -19,10 +16,13 @@ namespace Wallet
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var wallet = other.gameObject.GetComponent<Wallet>();
-            if (wallet == null) return;
+            if (other.gameObject.name != "Player") return;
 
-            wallet.Collect(type, count);
+            if (type == Type.Coin)
+                GameState.CoinsCount += count;
+            else if (type == Type.Life)
+                GameState.LivesCount += count;
+
             Destroy(gameObject);
         }
     }
