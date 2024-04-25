@@ -1,10 +1,9 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuActions : MonoBehaviour
 {
-    [SerializeField] private SceneAsset mainScene;
+    [SerializeField] private string mainScene;
 
     public void Quit()
     {
@@ -13,6 +12,6 @@ public class MainMenuActions : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(mainScene.name);
+        SceneManager.LoadScene(mainScene);
     }
 }
