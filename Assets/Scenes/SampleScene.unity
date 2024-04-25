@@ -5784,6 +5784,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 999738067504819592, guid: badc06a237e244fe39716e569c7e102b, type: 3}
+      propertyPath: nextScene
+      value: the first scene
+      objectReference: {fileID: 0}
     - target: {fileID: 1668653200701546091, guid: badc06a237e244fe39716e569c7e102b, type: 3}
       propertyPath: m_Name
       value: SceneChanger
