@@ -6,6 +6,7 @@ namespace Wallet
     public class CoinText : WalletListener
     {
         [SerializeField] protected Collectable.Type type = Collectable.Type.Coin;
+        [SerializeField] private string prefix;
 
         private TextMeshProUGUI _text;
 
@@ -16,7 +17,8 @@ namespace Wallet
 
         protected override void DisplayAmount()
         {
-            _text.text = type == Collectable.Type.Coin ? wallet.Coins.ToString() : wallet.Lives.ToString();
+            var count = type == Collectable.Type.Coin ? wallet.Coins : wallet.Lives;
+            _text.text = prefix + count;
         }
     }
 }
